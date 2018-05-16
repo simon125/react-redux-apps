@@ -20,6 +20,13 @@ export const inc = () => (dispatch, getState) => {
     )
 
 }
+export const dec = () => (dispatch, getState) => {
+    const state = getState()
+    database.ref('/counter').set(
+        state.asyncReduxCounter.asyncCounterValue - 1
+    )
+
+}
 
 const initialState = {
     asyncCounterValue: 0
